@@ -1,5 +1,5 @@
-import { useState } from 'react'
 
+import HeadHeader from './components/topHeader/HeadHeader'
 import './App.css'
 import Header from './components/header/Header'
 
@@ -7,7 +7,8 @@ function App() {
 
   return (
     <>
-     <Header />
+      <HeadHeader />
+      <Header />
     </>
   )
 }

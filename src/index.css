@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root{
+        --main-color-background: 249, 250, 251;
+        --main-color: 170, 187, 203 ;
+        --section-color: 255, 255, 255;
+        --color-text-1: 35, 31, 30;
+        --color-text-2: 123, 121, 120;
+    }
+}
+
+:root{
+    --main-color-background-css: rgb(249, 250, 251);
+    --main-color-css: rgb(170, 187, 203) ;
+    --section-color-css: rgb(255, 255, 255);
+    --color-text-1-css: rgb(35, 31, 30);
+    --color-text-2-css: rgb(123, 121, 120);
+}
+
+body.dark {
+    --main-color-background: 34, 34, 34;
+    --main-color: 29, 39, 49 ;
+    --section-color: 26, 26, 26;
+    --color-text-1: 255, 255, 255;
+    --color-text-2: 121, 128, 138;
+
+
+    --main-color-background-css: rgb(34, 34, 34);
+    --color-text-1-css: rgb(255, 255, 255);
+    --color-text-2-css: rgb(121, 128, 138);
+
+    background-color: var(--section-color-css);
+    color: var(--color-text-1-css);
+}
+
