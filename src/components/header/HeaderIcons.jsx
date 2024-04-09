@@ -1,15 +1,19 @@
 import React from 'react'
 
-// ICONS
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
 import PersonIcon from '@mui/icons-material/Person';
 import DarkMode from './DarkMode';
+import { Link } from 'react-router-dom';
+import CartButton from './CartButton';
+import Search from './Search';
+
 const HeaderIcons = () => {
   return (
     <div className='flex gap-4'>
-      <span className='flex cursor-pointer'> sign in <PersonIcon /></span>
+      <Search />
+      <Link to="Register" className='flex cursor-pointer'><PersonIcon /></Link>
       <DarkMode />
-      <ShoppingCartIcon />
+      <CartButton />
     </div>
     
   )

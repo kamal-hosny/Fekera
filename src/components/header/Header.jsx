@@ -1,8 +1,10 @@
 // CSS STYLE
+
 import "./header.css"
 // COMPONENTS
 import HeaderIcons from './HeaderIcons'
 import Logo from './Logo'
+import Menu from "./Menu"
 import { Nav } from './Nav'
 
 

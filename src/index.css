@@ -31,6 +31,8 @@ body.dark {
 
 
     --main-color-background-css: rgb(34, 34, 34);
+    --main-color-css: rgb(29, 39, 49) ;
+    --section-color-css: rgb(26, 26, 26);
     --color-text-1-css: rgb(255, 255, 255);
     --color-text-2-css: rgb(121, 128, 138);
 

@@ -2,30 +2,42 @@ import React, { useState } from 'react';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Link } from 'react-router-dom';
 import { useTranslation, initReactI18next } from "react-i18next";
-
+import { useDispatch, useSelector } from 'react-redux';
+import Cookies from 'js-cookie';
+import { setMenu } from '../../Slices/menuSlice';
 
 
 const MegaMenu = ({ myLinks }) => {
+
+  
+  const dispatch = useDispatch()
   const { t } = useTranslation()
   const [arrow, setArrow] = useState(false); // State to track arrow rotation
+  const lng = Cookies.get("i18next") || "en"
+
+  const mobileSize = useSelector(state => state.mobileSize.result);
+
+  const toggleMenu = () => {
+    dispatch(setMenu())
+}
 
   return (
-    <div className='nav-arrow relative cursor-pointer flex py-3 ' onMouseEnter={() => { setArrow(true) }} onMouseLeave={() => { setArrow(false) }} >
+    <div className={`nav-arrow relative cursor-pointer flex py-3 ${mobileSize === true && ( myLinks.links !== null && (" flex flex-row-reverse justify-between ")) } `} onMouseEnter={() => { setArrow(true) }} onMouseLeave={() => { setArrow(false) }} >
       {myLinks.links !== null && (
         <KeyboardArrowDownIcon className={` ${arrow ? "rotate-180 text-lime-700  " : ""}`} />
       )}
 
       {myLinks.links === null ? (
-        <Link to={myLinks.name} className={arrow ? "text-lime-700 " : ""}>
+        <Link to={myLinks.name} className={arrow ? "text-lime-700 " : ""} onClick={mobileSize && (()=>{toggleMenu()})}>
           {t(myLinks.name)}
         </Link>
       ) : (
         <div>
           <span className={arrow ? "text-lime-700 transition" : ""}>{t(myLinks.name)}</span>
           {arrow && (
-            <ul className='absolute  top-12 right-1 bg-mainColorBackground ps-10 rounded-md w-max py-2 shadow'>
+            <ul className={mobileSize === true ? (`relative ${lng === "en" ? " mobileSizeRtl " : "mobileSizeLtr"}`) : ('absolute z-[5] top-12 right-1 bg-mainColorBackground ps-10 rounded-md w-max py-2 shadow')}>
               {myLinks.links.map((x, index) => (
-                <Link to={x} key={index} className='flex items-center justify-end gap-3 pe-2 py-1  hover:text-lime-700'>
+                <Link to={x} key={index} className='flex items-center justify-end gap-3 pe-2 py-1  hover:text-lime-700' onClick={mobileSize && (()=>{toggleMenu()})}>
                   <li className={'hover:-translate-x-3 p-2 transition'}>
                     {t(x)}
                   </li>|

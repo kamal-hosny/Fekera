@@ -1,7 +1,7 @@
 // import React
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setTheme } from '../../darkMode/darkModeSlice';
+import { setTheme } from '../../Slices/darkModeSlice';
 //  import Icons MUI
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
