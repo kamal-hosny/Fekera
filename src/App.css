@@ -1,0 +1,15 @@
+.main-title{
+    position: relative;
+    margin-bottom: 10px;
+}
+.main-title::before{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 80px;
+    transform: translateX(-50%);
+    height: 2.5px;
+    background-color: var(--color-text-2-css);
+    
+}
