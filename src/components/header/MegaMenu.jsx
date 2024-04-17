@@ -24,20 +24,20 @@ const MegaMenu = ({ myLinks }) => {
   return (
     <div className={`nav-arrow relative cursor-pointer flex py-3 ${mobileSize === true && ( myLinks.links !== null && (" flex flex-row-reverse justify-between ")) } `} onMouseEnter={() => { setArrow(true) }} onMouseLeave={() => { setArrow(false) }} >
       {myLinks.links !== null && (
-        <KeyboardArrowDownIcon className={` ${arrow ? "rotate-180 text-lime-700  " : ""}`} />
+        <KeyboardArrowDownIcon className={` ${arrow ? "rotate-180 text-hoverColorText  " : ""}`} />
       )}
 
       {myLinks.links === null ? (
-        <Link to={myLinks.name} className={arrow ? "text-lime-700 " : ""} onClick={mobileSize && (()=>{toggleMenu()})}>
+        <Link to={myLinks.name} className={arrow ? "text-hoverColorText " : ""} onClick={mobileSize && (()=>{toggleMenu()})}>
           {t(myLinks.name)}
         </Link>
       ) : (
         <div>
-          <span className={arrow ? "text-lime-700 transition" : ""}>{t(myLinks.name)}</span>
+          <span className={arrow ? "text-hoverColorText transition" : ""}>{t(myLinks.name)}</span>
           {arrow && (
             <ul className={mobileSize === true ? (`relative ${lng === "en" ? " mobileSizeRtl " : "mobileSizeLtr"}`) : ('absolute z-[5] top-12 right-1 bg-mainColorBackground ps-10 rounded-md w-max py-2 shadow')}>
               {myLinks.links.map((x, index) => (
-                <Link to={x} key={index} className='flex items-center justify-end gap-3 pe-2 py-1  hover:text-lime-700' onClick={mobileSize && (()=>{toggleMenu()})}>
+                <Link to={x} key={index} className='flex items-center justify-end gap-3 pe-2 py-1  hover:text-hoverColorText' onClick={mobileSize && (()=>{toggleMenu()})}>
                   <li className={'hover:-translate-x-3 p-2 transition'}>
                     {t(x)}
                   </li>|

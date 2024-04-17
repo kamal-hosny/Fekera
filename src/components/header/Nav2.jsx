@@ -53,7 +53,7 @@ const Nav2 = () => {
 
   return (
     <>
-    <div className={`fixed flex flex-col gap-8 z-[5] px-3 py-3 top-0 ${lng === 'en' ? (menuValue ? 'left-0 w-[60%]' : 'left-[-100%]') : (menuValue ? 'right-0 w-[60%]' : 'right-[-100%]')} h-full border-r shadow bg-mainColorBackground transition-all ease-in-out duration-300`}>
+    <div className={`fixed flex flex-col gap-8 z-[50] px-3 py-3 top-0 ${lng === 'en' ? (menuValue ? 'left-0 w-[60%]' : 'left-[-100%]') : (menuValue ? 'right-0 w-[60%]' : 'right-[-100%]')} h-full border-r shadow bg-mainColorBackground transition-all ease-in-out duration-300`}>
       <span onClick={()=>{toggleMenu()}}>
       <Logo />
       </span>

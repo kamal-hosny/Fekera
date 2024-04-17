@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom';
 // pages
 import MainHeader from './pages/header/MainHeader';
 import Sale from './pages/sale/Sale'
+import Footer from './pages/footer/Footer';
 
 function App() {
  
@@ -19,6 +20,7 @@ function App() {
         <Route path='/' element={<Sale />} />
         <Route path='Sale' element={<Sale />} />
       </Routes>
+      <Footer />
     </>
   );
 }

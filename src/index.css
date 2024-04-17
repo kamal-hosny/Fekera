@@ -11,6 +11,7 @@
         --section-color: 255, 255, 255;
         --color-text-1: 35, 31, 30;
         --color-text-2: 123, 121, 120;
+        --color-text-hover: 96, 165, 250;
     }
 }
 
@@ -20,6 +21,7 @@
     --section-color-css: rgb(255, 255, 255);
     --color-text-1-css: rgb(35, 31, 30);
     --color-text-2-css: rgb(123, 121, 120);
+    --hover-color-text: rgb(96, 165, 250);
 }
 
 body.dark {

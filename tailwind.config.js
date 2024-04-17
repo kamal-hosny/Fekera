@@ -16,6 +16,7 @@ export default {
                 sectionColor: "rgba(var(--section-color))",
                 colorText1: "rgba(var(--color-text-1))",
                 colorText2: "rgba(var(--color-text-2))",
+                hoverColorText: "rgba(var(--color-text-hover))"
             }
         },
     },

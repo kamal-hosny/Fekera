@@ -5,6 +5,7 @@ import HeadHeader from '../../components/topHeader/HeadHeader';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { checkScreenSize } from '../../Slices/mobileSizeSlices';
+import HeaderMobile2 from '../../components/header/HeaderMobile2';
 
 
 const MainHeader = () => {
@@ -20,7 +21,7 @@ const MainHeader = () => {
   return (
     <header>
       <HeadHeader />
-      {mobileSize ? <HeaderMobile /> : <Header />}
+      {mobileSize ? (<><HeaderMobile /><HeaderMobile2 /></>) : (<Header />)}
     </header>
   )
 }
