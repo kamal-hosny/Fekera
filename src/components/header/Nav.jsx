@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
-import MegaMenu from './MegaMenu'
+import { Link } from 'react-router-dom'; // React Router library
+import MegaMenu from './MegaMenu'; // Custom component
 
 const myLinks = [
   {

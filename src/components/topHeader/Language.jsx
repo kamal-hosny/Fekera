@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react'
-
+import React, { useEffect } from 'react'; // React library
 
 // locale
-import i18n from "i18next";
-import { useTranslation, initReactI18next } from "react-i18next";
-import LanguageDetector from "i18next-browser-languagedetector";
-import HttpApi from 'i18next-http-backend';
-import Cookies from 'js-cookie';
+import i18n from "i18next"; // i18next library
+import { useTranslation, initReactI18next } from "react-i18next"; // react-i18next library
+import LanguageDetector from "i18next-browser-languagedetector"; // LanguageDetector from i18next library
+import HttpApi from 'i18next-http-backend'; // HttpApi from i18next library
+import Cookies from 'js-cookie'; // js-cookie library
+
 
 i18n
     .use(initReactI18next)

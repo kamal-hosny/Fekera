@@ -1,6 +1,6 @@
-import { setMenu } from '../../Slices/menuSlice';
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux'; // Redux library
+import React, { useState } from 'react'; // React library with useState hook
+import { setMenu } from '../../Slices/menuSlice'; // Redux Slice
 
 
 const Menu = () => {

@@ -1,10 +1,13 @@
-import React from 'react'
-import Logo from './Logo'
-import Menu from './Menu'
-import DarkMode from './DarkMode'
-import Nav2 from './Nav2'
-import CartButton from './CartButton'
-import Search from './Search'
+import React from 'react'; // React library
+
+// Custom component
+import Logo from './Logo'; 
+import Menu from './Menu'; 
+import DarkMode from './DarkMode';
+import Nav2 from './Nav2'; 
+import CartButton from './CartButton';
+import Search from './Search';
+
 
 const HeaderMobile = () => {
   return (

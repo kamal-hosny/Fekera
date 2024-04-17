@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import Cookies from 'js-cookie';
+import React, { useEffect, useState } from 'react'; // React library with hooks
+import { useSelector } from 'react-redux'; // Redux library
+import { Link } from 'react-router-dom'; // React Router library
+import Cookies from 'js-cookie'; // js-cookie library
 
 const Logo = () => {
   const [imageSrc, setImageSrc] = useState("");

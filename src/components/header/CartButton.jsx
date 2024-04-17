@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react' // React library
 
-// ICONS
+// Icons from MUI (Material-UI) library
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const CartButton = () => {

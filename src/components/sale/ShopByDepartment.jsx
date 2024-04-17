@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
-import MainTitle from "../MainTitle";
-import React from "react";
-import { useTranslation } from "react-i18next";
-
+import React from "react"; // React library
+import { Link } from "react-router-dom"; // React Router library
+import { useTranslation } from "react-i18next"; // react-i18next library
+import MainTitle from "../MainTitle"; // Custom MainTitle component
 
 
 const Departments = [

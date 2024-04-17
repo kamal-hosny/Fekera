@@ -1,13 +1,16 @@
-import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import Cookies from 'js-cookie';
-import Logo from './Logo';
-import MegaMenu from './MegaMenu';
-import MegaMenu2 from './MegaMenu2';
-import { setMenu } from '../../Slices/menuSlice';
-import DarkMode from './DarkMode';
-import Language from '../topHeader/Language';
+import React from 'react'; // React library
+import { useSelector, useDispatch } from 'react-redux'; // Redux library
+import Cookies from 'js-cookie'; // js-cookie library
 
+// Custom components
+import Logo from './Logo'; // Custom component
+import MegaMenu from './MegaMenu'; // Custom component
+import MegaMenu2 from './MegaMenu2'; // Custom component
+import DarkMode from './DarkMode'; // Custom component
+import Language from '../topHeader/Language'; // Custom component
+
+import { setMenu } from '../../Slices/menuSlice'; // Custom Redux Slice
+import { useTranslation } from 'react-i18next';
 
 const myLinks = [
   {
@@ -38,6 +41,7 @@ const myLinks = [
 ]
 
 const Nav2 = () => {
+  const { t } = useTranslation(); 
 
   const dispatch = useDispatch()
   const toggleMenu = () => {
@@ -67,7 +71,7 @@ const Nav2 = () => {
         }
       </ul>
       <div>
-        <p className='text-colorText2 text-xs mb-2'>Settings</p>
+        <p className='text-colorText2 text-xs mb-2'>{t("Settings")}</p>
         <div className='flex gap-3 items-center'>
           
           <DarkMode />

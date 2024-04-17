@@ -1,14 +1,10 @@
-import React from "react";
-
-import Language from "./Language";
-
-// icon
-import PhoneIcon from "@mui/icons-material/Phone";
-import { Link } from "react-router-dom";
+import React from "react"; // React library
+import Language from "./Language"; // Custom Language component
+import PhoneIcon from "@mui/icons-material/Phone"; // MUI PhoneIcon component
+import { Link } from "react-router-dom"; // React Router library
 
 // locale
-
-import { useTranslation, initReactI18next } from "react-i18next";
+import { useTranslation, initReactI18next } from "react-i18next"; // react-i18next library
 
 
 const HeadHeader = () => {

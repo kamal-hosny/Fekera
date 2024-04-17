@@ -1,11 +1,12 @@
-import React from "react";
-import MainTitle from "../MainTitle";
+import React from "react"; // React library
+import MainTitle from "../MainTitle"; // Custom MainTitle component
 
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet-async"; // React Helmet library
 
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next"; // react-i18next library
 
-import Cookies from "js-cookie";
+import Cookies from "js-cookie"; // js-cookie library
+
 
 const WhyFekera = () => {
   const lng = Cookies.get("i18next") || "en";

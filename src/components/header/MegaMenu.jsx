@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { Link } from 'react-router-dom';
-import { useTranslation, initReactI18next } from "react-i18next";
-import { useDispatch, useSelector } from 'react-redux';
-import Cookies from 'js-cookie';
-import { setMenu } from '../../Slices/menuSlice';
+import React, { useState } from 'react'; // React library with useState hook
+import { Link } from 'react-router-dom'; // React Router library
+import { useTranslation, initReactI18next } from "react-i18next"; // react-i18next library
+import { useDispatch, useSelector } from 'react-redux'; // Redux library
+import Cookies from 'js-cookie'; // js-cookie library
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'; // MUI Icon
+import { setMenu } from '../../Slices/menuSlice'; // Redux Slice
 
 
 const MegaMenu = ({ myLinks }) => {

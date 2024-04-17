@@ -1,16 +1,15 @@
-import React from 'react'
+import React from 'react'; // React library
 
-
-// ? Swiper
+// Swiper
 // import Swiper core and required modules
-import { Pagination, Autoplay } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules'; // Swiper modules
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react'; // Swiper React components
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import 'swiper/css'; // Swiper core styles
+import 'swiper/css/pagination'; // Swiper pagination styles
+import 'swiper/css/navigation'; // Swiper navigation styles
 
 
 const LandingPage = () => {

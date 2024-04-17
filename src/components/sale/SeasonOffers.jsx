@@ -1,9 +1,9 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import Timer from './Timer';
-import { Helmet } from 'react-helmet-async';
-import { Button } from '@mui/material';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import React from 'react'; // React library
+import { useTranslation } from 'react-i18next'; // react-i18next library
+import Timer from './Timer'; // Custom Timer component
+import { Helmet } from 'react-helmet-async'; // React Helmet library
+import { Button } from '@mui/material'; // MUI Button component
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward'; // MUI ArrowForwardIcon component
 
 const SeasonOffers = () => {
   const { t } = useTranslation(); 

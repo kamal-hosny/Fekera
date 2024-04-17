@@ -1,11 +1,11 @@
-import React from 'react'
-
-
-import PersonIcon from '@mui/icons-material/Person';
-import DarkMode from './DarkMode';
-import { Link } from 'react-router-dom';
+import React from 'react'; // React library
+import { Link } from 'react-router-dom'; // React Router library
+import PersonIcon from '@mui/icons-material/Person'; // MUI Icon
+// Custom components
+import DarkMode from './DarkMode'; 
 import CartButton from './CartButton';
-import Search from './Search';
+import Search from './Search'; 
+
 
 const HeaderIcons = () => {
   return (

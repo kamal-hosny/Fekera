@@ -1,8 +1,9 @@
-// import React
+// React library
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setTheme } from '../../Slices/darkModeSlice';
-//  import Icons MUI
+
+// Icons MUI (Material-UI) library
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
 

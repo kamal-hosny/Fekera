@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { useTranslation, initReactI18next } from "react-i18next";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import React, { useState } from "react"; // React library with useState hook
+import { Link } from "react-router-dom"; // React Router library
+import { useTranslation, initReactI18next } from "react-i18next"; // react-i18next library
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"; // MUI Icon
 
 const MegaMenu2 = ({ myLinks }) => {
     const { t } = useTranslation()

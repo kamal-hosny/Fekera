@@ -1,17 +1,18 @@
-import MainTitle from '../MainTitle'
-import React from 'react'
+import React from 'react'; // React library
+import MainTitle from '../MainTitle'; // Custom MainTitle component
 
-// ? Swiper
+// Swiper
 // import Swiper core and required modules
-import { Pagination, Autoplay } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules'; // Swiper modules
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react'; // Swiper React components
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import { Link } from 'react-router-dom';
+import 'swiper/css'; // Swiper core styles
+import 'swiper/css/pagination'; // Swiper pagination styles
+import 'swiper/css/navigation'; // Swiper navigation styles
+import { Link } from 'react-router-dom'; // React Router library
+
 
 const brandmarks =[
     {

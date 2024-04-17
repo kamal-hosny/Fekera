@@ -1,11 +1,10 @@
-// CSS STYLE
+import "./header.css"; // CSS file
 
-import "./header.css"
-// COMPONENTS
-import HeaderIcons from './HeaderIcons'
-import Logo from './Logo'
-import Menu from "./Menu"
-import { Nav } from './Nav'
+// Custom component
+import Logo from './Logo'; 
+import Menu from "./Menu";
+import HeaderIcons from './HeaderIcons'; 
+import { Nav } from './Nav';
 
 
 const Header = () => {
