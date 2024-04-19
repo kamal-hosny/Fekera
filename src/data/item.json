@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "name": "Vans larel flower print shirt in cream and dark pink",
+        "image": "https://images.asos-media.com/products/vans-larel-flower-print-shirt-in-cream-and-dark-pink/206077387-1-natural?$n_480w$&wid=476&fit=constrain",
+        "description": "Shirts",
+        "price": 56,
+        "status": {
+            "name": "discount",
+            "color": "#22c55e"
+        },
+        "discount": 41
+    },
+    {
+        "id": 2,
+        "name": "ON Cloudswift 3 AD all day trainers in frost and glacier",
+        "image": "https://images.asos-media.com/products/on-cloudswift-3-ad-all-day-trainers-in-frost-and-glacier/204529095-1-white?$n_320w$&wid=317&fit=constrain",
+        "description": "Shoes",
+        "price": 191,
+        "status": {
+            "name": "discount",
+            "color": "#22c55e"
+        },
+        "discount": 22
+    },
+    {
+        "id": 3,
+        "name": "Vans larel flower print shirt in cream and dark pink",
+        "image": "https://cdn.shopify.com/s/files/1/2256/1953/products/navy-blue-pro-tech-hoodie-785004_180x.jpg?v=1705432947",
+        "description": "Jumpers & Cardigans",
+        "price": 160,
+        "status": {
+            "name": "تخفيضات رمضان",
+            "color": "#d78c9a"
+        },
+        "discount": 21
+    },
+    {
+        "id": 4,
+        "name": "Vans larel flower print shirt in cream and dark pink",
+        "image": "https://i.pinimg.com/236x/f5/11/58/f5115829a3248802217931d746966e22.jpg",
+        "description": "Shirts",
+        "price": 56,
+        "status": {
+            "name": "discount",
+            "color": "#22c55e"
+        },
+        "discount": 41
+    },
+    {
+        "id": 5,
+        "name": "ON Cloudswift 3 AD all day trainers in frost and glacier",
+        "image": "https://www.pinterest.com/pin/40743571622751363/",
+        "description": "Shoes",
+        "price": 191,
+        "status": {
+            "name": "discount",
+            "color": "#22c55e"
+        },
+        "discount": 22
+    },
+    {
+        "id": 6,
+        "name": "Vans larel flower print shirt in cream and dark pink",
+        "image": "https://cdn.shopify.com/s/files/1/2256/1953/products/navy-blue-pro-tech-hoodie-785004_180x.jpg?v=1705432947",
+        "description": "Jumpers & Cardigans",
+        "price": 160,
+        "status": {
+            "name": "تخفيضات رمضان",
+            "color": "#d78c9a"
+        },
+        "discount": 21
+    },
+    {
+        "id": 7,
+        "name": "ON Cloudswift 3 AD all day trainers in frost and glacier",
+        "image": "https://images.asos-media.com/products/asos-design-stretch-slim-fit-work-shirt-in-navy/203194357-1-navy?$n_320w$&wid=317&fit=constrain",
+        "description": "Shoes",
+        "price": 191,
+        "status": {
+            "name": "discount",
+            "color": "#22c55e"
+        },
+        "discount": 22
+    },
+    {
+        "id": 8,
+        "name": "Vans larel flower print shirt in cream and dark pink",
+        "image": "https://cdn.shopify.com/s/files/1/2256/1953/products/navy-blue-pro-tech-hoodie-785004_180x.jpg?v=1705432947",
+        "description": "Jumpers & Cardigans",
+        "price": 160,
+        "status": {
+            "name": "تخفيضات رمضان",
+            "color": "#d78c9a"
+        },
+        "discount": 21
+    }
+]

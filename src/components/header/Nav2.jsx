@@ -12,33 +12,7 @@ import Language from '../topHeader/Language'; // Custom component
 import { setMenu } from '../../Slices/menuSlice'; // Custom Redux Slice
 import { useTranslation } from 'react-i18next';
 
-const myLinks = [
-  {
-    id: 1,
-    name: "Sale",
-    links: null
-  },
-  {
-    id: 2,
-    name: "Clothing",
-    links: ["T-shirts & Vests", "Hoodies & Sweatshirts", "Jeans", "Jumpers & Cardigans", "Shirts", "Trousers & Chinos", "Suits", "Cargo Trousers", "Co-Ords", "Designer Brands" ]
-  },
-  {
-    id: 3,
-    name: "Shoes",
-    links: null
-  },
-  {
-    id: 4,
-    name: "Accessories",
-    links: null
-  },
-  {
-    id: 5,
-    name: "Sportswear",
-    links: null
-  },
-]
+import myLinks from "../../data/links.json";
 
 const Nav2 = () => {
   const { t } = useTranslation(); 
@@ -57,7 +31,7 @@ const Nav2 = () => {
 
   return (
     <>
-    <div className={`fixed flex flex-col gap-8 z-[50] px-3 py-3 top-0 ${lng === 'en' ? (menuValue ? 'left-0 w-[60%]' : 'left-[-100%]') : (menuValue ? 'right-0 w-[60%]' : 'right-[-100%]')} h-full border-r shadow bg-mainColorBackground transition-all ease-in-out duration-300`}>
+    <div className={`fixed flex flex-col gap-8 z-[50] px-3 py-3 top-0 overflow-auto ${lng === 'en' ? (menuValue ? 'left-0 w-[60%]' : 'left-[-100%]') : (menuValue ? 'right-0 w-[60%]' : 'right-[-100%]')} h-full border-r shadow bg-mainColorBackground transition-all ease-in-out duration-300`}>
       <span onClick={()=>{toggleMenu()}}>
       <Logo />
       </span>

@@ -12,6 +12,8 @@
         --color-text-1: 35, 31, 30;
         --color-text-2: 123, 121, 120;
         --color-text-hover: 96, 165, 250;
+        --color-border: 242, 242, 242;
+        
     }
 }
 
@@ -21,7 +23,8 @@
     --section-color-css: rgb(255, 255, 255);
     --color-text-1-css: rgb(35, 31, 30);
     --color-text-2-css: rgb(123, 121, 120);
-    --hover-color-text: rgb(96, 165, 250);
+    --color-text-hover-css: rgb(96, 165, 250);
+    --color-border-css: rgb(242, 242, 242);
 }
 
 body.dark {
@@ -30,13 +33,14 @@ body.dark {
     --section-color: 26, 26, 26;
     --color-text-1: 255, 255, 255;
     --color-text-2: 121, 128, 138;
-
+    --color-border: 24, 24, 24;
 
     --main-color-background-css: rgb(34, 34, 34);
     --main-color-css: rgb(29, 39, 49) ;
     --section-color-css: rgb(26, 26, 26);
     --color-text-1-css: rgb(255, 255, 255);
     --color-text-2-css: rgb(121, 128, 138);
+    --color-border-css: rgb(24, 24, 24);
 
     background-color: var(--section-color-css);
     color: var(--color-text-1-css);

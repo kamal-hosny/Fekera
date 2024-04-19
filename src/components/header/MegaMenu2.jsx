@@ -5,12 +5,12 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"; // MU
 
 const MegaMenu2 = ({ myLinks }) => {
     const { t } = useTranslation()
-    const [arrow, setArrow] = useState(false); // State to track arrow rotation
+    const [arrow, setArrow] = useState(false); 
 
     return (
         <div className='nav-arrow relative cursor-pointer flex py-3 ' onMouseEnter={() => { setArrow(true) }} onMouseLeave={() => { setArrow(false) }} >
             {myLinks.links !== null && (
-                <KeyboardArrowDownIcon className={` ${arrow ? "rotate-180 text-lime-700  " : ""}`} />
+                <KeyboardArrowDownIcon className={` ${arrow ? "rotate-180 text-hoverColorText  " : ""}`} />
             )}
 
             {myLinks.links === null ? (

@@ -21,8 +21,16 @@ const MegaMenu = ({ myLinks }) => {
     dispatch(setMenu())
 }
 
+const megaClick = ()=> {
+  if(arrow === true){
+    setArrow(false)
+  }else{
+    setArrow(true)
+  }
+}
+
   return (
-    <div className={`nav-arrow relative cursor-pointer flex py-3 ${mobileSize === true && ( myLinks.links !== null && (" flex flex-row-reverse justify-between ")) } `} onMouseEnter={() => { setArrow(true) }} onMouseLeave={() => { setArrow(false) }} >
+    <div className={`nav-arrow relative cursor-pointer flex py-3 ${mobileSize === true && ( myLinks.links !== null && (" flex flex-row-reverse justify-between ")) } `} onMouseEnter={() => { setArrow(true) }} onClick={megaClick} onMouseLeave={() => { setArrow(false) }} >
       {myLinks.links !== null && (
         <KeyboardArrowDownIcon className={` ${arrow ? "rotate-180 text-hoverColorText  " : ""}`} />
       )}
