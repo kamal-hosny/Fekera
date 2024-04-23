@@ -10,7 +10,7 @@ import MegaMenu from './MegaMenu'; // Custom component
 import { useTranslation } from 'react-i18next';
 import { setMenu } from '../../../hook/menuSlice'; // Custom Redux Slice
 
-import myLinks from "../../../../data/links.json";
+import myLinks from "../../../data/links.json";
 
 const Nav2 = () => {
   const { t } = useTranslation(); 

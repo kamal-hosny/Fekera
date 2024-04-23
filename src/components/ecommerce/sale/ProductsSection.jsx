@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom';
-import storeItems from "../../../../data/item.json";
+import storeItems from "../../../data/item.json";
 import Card from '../../common/Card';
 import MainTitle from '../../common/MainTitle';
     

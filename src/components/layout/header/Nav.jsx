@@ -1,6 +1,6 @@
 import MegaMenu from './MegaMenu'; // Custom component
 
-import myLinks from "../../../../data/links.json";
+import myLinks from "../../../data/links.json";
 
 
 
