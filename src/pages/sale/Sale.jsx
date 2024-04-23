@@ -1,12 +1,11 @@
-import React from 'react'; // React library
 
 // Custom component
-import ShopByDepartment from '../../components/sale/ShopByDepartment'; 
-import LandingPage from '../../components/sale/LandingPage'; 
-import WhyFekera from '../../components/sale/WhyFekera'; 
-import Trademarks from '../../components/sale/Trademarks'; 
-import SeasonOffers from '../../components/sale/SeasonOffers'; 
-import ProductsSection from '../../components/sale/ProductsSection';
+import LandingPage from '../../components/ecommerce/sale/LandingPage';
+import ProductsSection from '../../components/ecommerce/sale/ProductsSection';
+import SeasonOffers from '../../components/ecommerce/sale/SeasonOffers';
+import ShopByDepartment from '../../components/ecommerce/sale/ShopByDepartment';
+import Trademarks from '../../components/ecommerce/sale/Trademarks';
+import WhyFekera from '../../components/ecommerce/sale/WhyFekera';
 
 const Sale = () => {
   return (

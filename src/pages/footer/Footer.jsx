@@ -1,20 +1,17 @@
-import React from 'react'; // React library
-import { Link } from 'react-router-dom'; // React Router library
-import { Helmet } from 'react-helmet-async'; // React Helmet library
 import { useTranslation } from 'react-i18next'; // react-i18next library
+import { Link } from 'react-router-dom'; // React Router library
 
 // Icons from MUI (Material-UI) library
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import MailIcon from '@mui/icons-material/Mail';
-import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
-import PhoneIcon from '@mui/icons-material/Phone';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import XIcon from '@mui/icons-material/X';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import MailIcon from '@mui/icons-material/Mail';
+import PhoneIcon from '@mui/icons-material/Phone';
+import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
+import XIcon from '@mui/icons-material/X';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 
 // Custom component
-import Logo from '../../components/header/Logo'; 
+import Logo from '../../components/layout/header/Logo';
 
 
 const Footer = () => {

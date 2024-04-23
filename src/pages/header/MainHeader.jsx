@@ -2,13 +2,13 @@ import { useEffect } from 'react'; // React library
 import { useDispatch, useSelector } from 'react-redux'; // Redux library
 
 // Custom component
-import Header from '../../components/header/Header'; 
-import HeaderMobile from '../../components/header/HeaderMobile'; 
-import HeaderMobile2 from '../../components/header/HeaderMobile2';
-import HeadHeader from '../../components/topHeader/HeadHeader';
+import Header from '../../components/layout/header/Header';
+import HeaderMobile from '../../components/layout/header/HeaderMobile';
+import HeaderMobile2 from '../../components/layout/header/HeaderMobile2';
+import HeadHeader from '../../components/layout/topHeader/HeadHeader';
 
 // Redux Slice
-import { checkScreenSize } from '../../Slices/mobileSizeSlices'; 
+import { checkScreenSize } from '../../hook/mobileSizeSlices';
 
 
 const MainHeader = () => {
