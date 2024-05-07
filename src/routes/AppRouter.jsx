@@ -2,25 +2,35 @@
 import '../App.css';
 
 // 
-import { Route, Routes } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 // pages
 import MainHeader from '../pages/header/MainHeader';
 import Sale from '../pages/sale/Sale'
 import Footer from '../pages/footer/Footer';
+import Layout from '../components/layout/Layout';
+import Specialoffers from '../pages/special-offers/Specialoffers';
+import Products from '../pages/products/Products';
 
 
 function App() {
-
+  const Routing = createBrowserRouter([
+    {
+      path:"/",
+      element: (<>
+          <Layout />
+      </>),
+      children: [
+        {index: true, element: <Sale />},
+        {path: "/sale", element: <Sale />},
+        {path: "/specialoffers", element: <Specialoffers />},
+        {path: "/products/:slug", element: <Products />}
+      ]
+    }
+  ])
   return (
     <>
-     
-      <MainHeader />
-      <Routes> 
-        <Route path='/' element={<Sale />} />
-        <Route path='Sale' element={<Sale />} />
-      </Routes>
-      <Footer />
+      <RouterProvider router={Routing} />
     </>
   );
 }
