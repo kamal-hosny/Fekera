@@ -41,6 +41,10 @@
     "Search" : "بحث",
     "Cart" : "عربة التسوق",
     "Wishes" : "الأمنيات",
-    "Login" : "تسجيل الدخول"
+    "Login" : "تسجيل الدخول",
+    "Show more": "عرض المزيد",
+        "Special Offers": "عروض خاصة",
+        "Top Sellers": "الأكثر مبيعًا",
+        "Latest Products": "أحدث المنتجات"      
 }
 

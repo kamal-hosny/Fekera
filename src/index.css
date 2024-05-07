@@ -46,3 +46,6 @@ body.dark {
     color: var(--color-text-1-css);
 }
 
+body{
+    overflow-x: hidden;
+}

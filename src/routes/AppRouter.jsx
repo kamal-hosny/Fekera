@@ -9,8 +9,8 @@ import MainHeader from '../pages/header/MainHeader';
 import Sale from '../pages/sale/Sale'
 import Footer from '../pages/footer/Footer';
 
+
 function App() {
- 
 
   return (
     <>

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'; // Redux library
-import { setMenu } from '../../../hook/menuSlice'; // Redux Slice
+import { setMenu } from '../../reduxToolkit/menuSlice'; // Redux Slice
 
 
 const Menu = () => {
