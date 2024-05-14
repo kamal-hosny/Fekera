@@ -11,6 +11,9 @@ import Footer from '../pages/footer/Footer';
 import Layout from '../components/layout/Layout';
 import Specialoffers from '../pages/special-offers/Specialoffers';
 import Products from '../pages/products/Products';
+import Register from '../pages/sign/Register';
+import Login from '../pages/sign/Login';
+import ForgotPassword from '../pages/sign/ForgotPassword';
 
 
 function App() {
@@ -24,7 +27,10 @@ function App() {
         {index: true, element: <Sale />},
         {path: "/sale", element: <Sale />},
         {path: "/specialoffers", element: <Specialoffers />},
-        {path: "/products/:slug", element: <Products />}
+        {path: "/products/:slug", element: <Products />},
+        {path: "/login", element: <Login />},
+        {path: "/register", element: <Register />},
+        {path: "/forgot-password", element: <ForgotPassword />}
       ]
     }
   ])

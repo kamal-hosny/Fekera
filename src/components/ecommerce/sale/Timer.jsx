@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Timer = ({ duration }) => {
+const Timer = ({ duration, size }) => {
     const [time, setTime] = useState(duration);
 
     useEffect(() => {
@@ -25,35 +25,48 @@ const Timer = ({ duration }) => {
             days: days,
             hours: hours,
             minutes: minutes,
-            seconds: seconds
+            seconds: seconds,
         };
     };
 
     const formattedTime = getFormattedTime(time);
 
     return (
-        <div className="relative flex gap-4  md:py-4">
-            <div className="flex flex-col items-center md:text-xl font-semibold">
-                <span>{formattedTime.days}</span>
-                <span>Days</span>
-            </div>
-            :
-            <div className="flex flex-col items-center md:text-xl font-semibold">
-                <span>{formattedTime.hours}</span>
-                <span>Hours</span>
-            </div>
-            :
-            <div className="flex flex-col items-center md:text-xl font-semibold">
-                <span>{formattedTime.minutes}</span>
-                <span>Minutes</span>
-            </div>
-            :
-            <div className="flex flex-col items-center md:text-xl font-semibold">
-                <span>{formattedTime.seconds}</span>
-                <span>Seconds</span>
-            </div>
-
-        </div>
+        <>
+            {size === "big" ? (
+                <div className="relative flex gap-4  md:py-4">
+                    <div className="flex flex-col items-center md:text-xl font-semibold">
+                        <span>{formattedTime.days}</span>
+                        <span>Days</span>
+                    </div>
+                    :
+                    <div className="flex flex-col items-center md:text-xl font-semibold">
+                        <span>{formattedTime.hours}</span>
+                        <span>Hours</span>
+                    </div>
+                    :
+                    <div className="flex flex-col items-center md:text-xl font-semibold">
+                        <span>{formattedTime.minutes}</span>
+                        <span>Minutes</span>
+                    </div>
+                    :
+                    <div className="flex flex-col items-center md:text-xl font-semibold">
+                        <span>{formattedTime.seconds}</span>
+                        <span>Seconds</span>
+                    </div>
+                </div>
+            ) : (
+                <div className="flex gap-2">
+                    <div>Sale ends</div>
+                    <ul className="flex gap-2">
+                        <li>{formattedTime.days}d</li>
+                        <li>{formattedTime.hours}h</li>
+                        <li>{formattedTime.minutes}m</li>
+                        <li>{formattedTime.seconds}s</li>
+                    </ul>
+                </div>
+            )}
+        </>
     );
 };
 

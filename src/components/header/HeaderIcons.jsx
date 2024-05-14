@@ -10,7 +10,7 @@ const HeaderIcons = () => {
   return (
     <div className="flex gap-4">
       <Search />
-      <Link to="Register" className="flex cursor-pointer">
+      <Link to="/login" className="flex cursor-pointer">
         <PersonIcon />
       </Link>
       <DarkMode />

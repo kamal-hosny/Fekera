@@ -140,7 +140,7 @@ const Card = ({ item }) => {
                                 <div className="new-price text-colorText1">
                                     {FormatCurrency(discountedPrice)}
                                 </div>
-                                <div className="olg-price flex gap-2 items-center">
+                                <div className="old-price flex gap-2 items-center">
                                     <del className="text-colorText2">
                                         {FormatCurrency(item.price)}
                                     </del>

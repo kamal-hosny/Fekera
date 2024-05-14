@@ -40,7 +40,7 @@ const navheader = [
         id: 5,
         name: "Login",
         icon: <PersonOutlineIcon />,
-        link: "/"
+        link: "/login"
     },
 ];
 

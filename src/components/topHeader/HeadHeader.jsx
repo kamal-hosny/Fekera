@@ -1,4 +1,4 @@
-import React from "react"; // React library
+import React, { useEffect } from "react"; // React library
 import Language from "./Language"; // Custom Language component
 import PhoneIcon from "@mui/icons-material/Phone"; // MUI PhoneIcon component
 import { Link } from "react-router-dom"; // React Router library
@@ -9,6 +9,7 @@ import { useTranslation, initReactI18next } from "react-i18next"; // react-i18ne
 
 const HeadHeader = () => {
   const { t } = useTranslation();
+
 
   return (
     <div className=" bg-mainColor text-xs">

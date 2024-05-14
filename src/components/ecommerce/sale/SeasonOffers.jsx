@@ -22,7 +22,7 @@ const SeasonOffers = () => {
           <h4 className="relative font-bold text-xs md:text-xl">{t("Discounts 20%")}</h4>
           <h1 className="relative font-bold text-4xl md:text-7xl">{t("Season Offers")}</h1>
           <h5 className="relative text-xs md:text-xl">{t("Time Remaining for the Offer")}</h5>
-          <Timer duration={2 * 24 * 60 * 60 * 1000} />
+          <Timer duration={2 * 24 * 60 * 60 * 1000} size={"big"} />
           <Button variant="contained" style={{ color: "black", background: "#fff", boxShadow: "none", marginTop: "10px" }} className="relative w-fit " endIcon={<ArrowForwardIcon />}>
           {t("Getting a discount")}
       </Button>

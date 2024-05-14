@@ -1,4 +1,4 @@
-import React from "react"; // React library
+import React, { useEffect, useState } from "react"; // React library
 
 import { Link } from "react-router-dom";
 
@@ -7,8 +7,18 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ClearIcon from "@mui/icons-material/Clear";
 import { Button } from "@mui/material";
 import { Helmet } from "react-helmet-async";
+import Cookies from "js-cookie";
+import { loadNamespaces } from "i18next";
+import { useDispatch, useSelector } from "react-redux";
+import { checkScreenSize } from '../../reduxToolkit/mobileSizeSlices';
+
 
 const CartButton = () => {
+  const languageCurrent = useSelector((state) => {
+    return state.languageSlice.result
+});
+const mobileSize = useSelector(state => state.mobileSize.result);
+
   return (
     <>
       <Helmet>
@@ -33,7 +43,7 @@ const CartButton = () => {
 
       <div className="cartButton cursor-pointer relative">
         <ShoppingCartIcon  />
-        <div className="cart absolute w-72 z-[2] top-10 right-0 border-borderColor border-2 bg-mainColorBackground shadow">
+        <div className={`cart absolute w-72 z-[2] top-10 border-borderColor border-2 bg-mainColorBackground shadow ${mobileSize? languageCurrent  ? "left-0" : "right-0" :  languageCurrent  ? "right-0" : "left-0"}`}>
           <div className=" p-3 headerCart flex justify-between   ">
             <div>
               <span>0</span> Items

@@ -43,8 +43,25 @@
     "Wishes" : "الأمنيات",
     "Login" : "تسجيل الدخول",
     "Show more": "عرض المزيد",
-        "Special Offers": "عروض خاصة",
-        "Top Sellers": "الأكثر مبيعًا",
-        "Latest Products": "أحدث المنتجات"      
+    "Special Offers": "عروض خاصة",
+    "Top Sellers": "الأكثر مبيعًا",
+    "Latest Products": "أحدث المنتجات",
+    "Login Form": "تسجيل الدخول",
+    "PASSWORD": "كلمة المرور",
+    "SIGN IN": "تسجيل الدخول",
+    "Forgot password ?": "هل نسيت كلمة المرور؟",
+    "EMAIL ADDRESS:" : "عنوان البريد الإلكتروني:",
+    "OR SIGN IN WITH..." : "أو قم بتسجيل الدخول باستخدام...",
+    "Forgot password ?" : "هل نسيت كلمة المرور؟",
+    "JOIN": "انضمام",
+    "SIGN IN": "تسجيل الدخول",
+    "First Name" : "الاسم الأول",
+    "Last Name" : "اللقب",
+    "SIGN UP WITH..." :"سجّل الدخول باستخدام",
+    "RESET YOUR PASSWORD": "إعادة تعيين كلمة المرور",
+    "Type in your email address below and we'll send you an email with instructions on how to create a new password": "ادخل عنوان بريدك الإلكتروني أدناه وسنرسل لك بريدًا إلكترونيًا يحتوي على تعليمات حول كيفية إنشاء كلمة مرور جديدة",
+    "RESET PASSWORD" : "إعادة تعيين كلمة المرور"
+
+
 }
 

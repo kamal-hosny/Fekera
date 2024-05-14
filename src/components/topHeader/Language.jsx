@@ -6,6 +6,8 @@ import { useTranslation, initReactI18next } from "react-i18next"; // react-i18ne
 import LanguageDetector from "i18next-browser-languagedetector"; // LanguageDetector from i18next library
 import HttpApi from 'i18next-http-backend'; // HttpApi from i18next library
 import Cookies from 'js-cookie'; // js-cookie library
+import { useDispatch } from 'react-redux';
+import { setLanguage } from '../../reduxToolkit/languageNowSlice';
 
 
 i18n
@@ -34,10 +36,10 @@ i18n
 
 const Language = () => {
     const { t } = useTranslation()
-
+    const dispatch = useDispatch();
     const lng = Cookies.get("i18next") || "en"
-
     useEffect(() => {
+        dispatch(setLanguage(lng))
         window.document.dir = i18n.dir()
     }, [lng])
 

@@ -13,6 +13,8 @@ const Menu = () => {
     }
 
     return (
+        <>
+
         <div className='menu md:hidden'>
             <label className="burger" htmlFor="burger">
                 <input type="checkbox" checked={menuValue} id="burger" onChange={toggleMenu} />
@@ -21,6 +23,7 @@ const Menu = () => {
                 <span></span>
             </label>
         </div>
+        </>
     );
 }
 

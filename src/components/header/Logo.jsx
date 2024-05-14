@@ -20,7 +20,7 @@ const Logo = () => {
   }, [resultState]);
 
   return (
-    <div className='cursor-pointer overflow-hidden'>
+    <div className='cursor-pointer overflow-hidden flex justify-center '>
       <Link to="/" className='cursor-pointer'>
         <img className="scale-[1.3]" width={90} src={imageSrc} alt='logo' />
       </Link>
