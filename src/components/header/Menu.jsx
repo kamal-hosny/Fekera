@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'; // Redux library
 import { setMenu } from '../../reduxToolkit/menuSlice'; // Redux Slice
+import { Helmet } from 'react-helmet-async';
 
 
 const Menu = () => {
@@ -12,9 +13,18 @@ const Menu = () => {
         dispatch(setMenu())
     }
 
+    console.log(menuValue);
+
     return (
         <>
-
+      <Helmet>
+        <style type="text/css">{`
+            body {
+                overflow-y: ${menuValue === true ? "hidden" : "auto"} !important;
+            }        
+        `}
+        </style >
+      </Helmet>
         <div className='menu md:hidden'>
             <label className="burger" htmlFor="burger">
                 <input type="checkbox" checked={menuValue} id="burger" onChange={toggleMenu} />

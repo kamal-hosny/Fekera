@@ -1,7 +1,7 @@
 import React from 'react'
 
 import ProjectImg from '../../components/products/ProjectImg'
-import BreadCrumbs from '../../components/products/BreadCrumbs'
+import BreadCrumbs from '../../components/common/BreadCrumbs'
 import ProjectDetails from '../../components/products/ProjectDetails'
 import ProjectDescription from '../../components/products/ProjectDescription'
 

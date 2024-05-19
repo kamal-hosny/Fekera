@@ -15,7 +15,7 @@ import 'swiper/css/navigation'; // Swiper navigation styles
 const LandingPage = () => {
     return (
         <section> 
-            <div className='py-2 px-4 flex justify-center'>
+            <div className='py-14 px-4 flex justify-center'>
                 <Swiper
                     pagination={{
                         dynamicBullets: true,

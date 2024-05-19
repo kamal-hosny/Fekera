@@ -33,7 +33,7 @@ const navheader = [
         id: 4,
         name: "Wishes",
         icon: <FavoriteBorderIcon />,
-        link: "/",
+        link: "/wishlist",
         count: true
     },
     {

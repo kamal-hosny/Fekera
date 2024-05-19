@@ -14,6 +14,8 @@ import Products from '../pages/products/Products';
 import Register from '../pages/sign/Register';
 import Login from '../pages/sign/Login';
 import ForgotPassword from '../pages/sign/ForgotPassword';
+import Wishlist from '../pages/wishlist/Wishlist';
+import Cart from '../pages/cart/Cart';
 
 
 function App() {
@@ -30,7 +32,9 @@ function App() {
         {path: "/products/:slug", element: <Products />},
         {path: "/login", element: <Login />},
         {path: "/register", element: <Register />},
-        {path: "/forgot-password", element: <ForgotPassword />}
+        {path: "/forgot-password", element: <ForgotPassword />},
+        {path: "/wishlist", element: <Wishlist />},
+        {path: "/cart", element: <Cart />}
       ]
     }
   ])
