@@ -3,8 +3,7 @@ import storeItems from "../../../data/item.json";
 import Card from "../../common/Card";
 import MainTitle from "../../common/MainTitle";
 
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+
 
 // Swiper
 // import Swiper core and required modules
@@ -23,7 +22,7 @@ import { useTranslation } from "react-i18next";
 const ProductsSection = ({ name, data }) => {
     const { t } = useTranslation()
     const result = name.replace(" ", "").toLowerCase()
-  return (
+    return (
     <>
       <Helmet>
         <style type="text/css">{`
@@ -67,44 +66,48 @@ const ProductsSection = ({ name, data }) => {
             `}</style>
       </Helmet>
       <div className="ProductsSection my-4 p-4 rounded-md">
-        <Link to={`/shop/${result}`}>
-          <MainTitle title={t(name)} />
-        </Link>
 
-        <Swiper
-          pagination={{
-            dynamicBullets: true,
-          }}
-          modules={[Navigation, Autoplay]}
-          className="mySwiper  rounded-md"
-          loop={true}
-          navigation={{ nextEl: ".right-arrow", prevEl: ".left-arrow" }}
-          spaceBetween={10}
-          slidesPerView={2}
-          autoplay={{ delay: 2500, disableOnInteraction: false }}
-          style={{ direction: "rtl" }}
-          breakpoints={{
-            991: {
-              slidesPerView: 4,
-            },
-            768: {
-              slidesPerView: 3,
-            },
-          }}
-        >
-          {data.map((x) => (
-            <SwiperSlide key={x.id}>
-              <Card item={x} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+          <MainTitle title={name} />
+
+          {data && data.length > 0 ? (
+          <Swiper
+            pagination={{
+              dynamicBullets: true,
+            }}
+            modules={[Navigation, Autoplay]}
+            className="mySwiper rounded-md"
+            loop={true}
+            navigation={{
+              nextEl: `.right-arrow-${result}`,
+              prevEl: `.left-arrow-${result}`
+            }}
+            spaceBetween={10}
+            slidesPerView={2}
+            autoplay={{ delay: 2500, disableOnInteraction: false }}
+            style={{ direction: "rtl" }}
+            breakpoints={{
+              991: {
+                slidesPerView: 4,
+              },
+              768: {
+                slidesPerView: 3,
+              },
+            }}
+          >
+            {data.map((x) => (
+              <SwiperSlide key={x.id}>
+                <Card item={x} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <div className="text-center text-gray-500">
+            {t('No products available')}
+          </div>
+        )}
 
         <div className="w-full flex justify-center my-8 items-center gap-4">
-        <ArrowBackIcon sx={{ fontSize: 40 }} className="cursor-pointer right-arrow  "/>
-            <button className="show">
-                <Link to={`/shop/${result}`}><span>{t("Show more")}</span></Link>
-            </button>
-        <ArrowForwardIcon sx={{ fontSize: 40 }} className="cursor-pointer left-arrow" />
+
         </div>
       </div>
     </>

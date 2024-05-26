@@ -10,7 +10,7 @@ const Products = () => {
     <>
     <div className="container md:w-4/5 w-full mx-auto flex flex-col gap-4 my-4 px-2">
       <BreadCrumbs/>
-      <div className='flex justify-between md:flex-row flex-col gap-4 flex-wrap'>
+      <div className='flex justify-between md:flex-row flex-col gap-4 flex-wrap '>
       <ProjectImg />
       <ProjectDetails />
       </div>

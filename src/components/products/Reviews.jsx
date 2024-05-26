@@ -1,4 +1,4 @@
-import { Rating, dividerClasses } from "@mui/material";
+import { Button, Rating, dividerClasses } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
@@ -12,11 +12,27 @@ import { Swiper, SwiperSlide } from "swiper/react"; // Swiper React components
 import "swiper/css"; // Swiper core styles
 import "swiper/css/navigation"; // Swiper navigation styles
 import "swiper/css/pagination"; // Swiper pagination styles
+import { Helmet } from "react-helmet-async";
 
 const Reviews = () => {
   const mobileSize = useSelector((state) => state.mobileSize.result);
   return (
-    <div className="flex flex-col gap-5">
+    <>
+        <Helmet>
+        <style type="text/css">{`
+              .Reviews .btn{
+                padding: 8px 16px ;
+                border-radius: 2px;
+                background-color: var(--main-color-css);
+                box-shadow: none;
+                font-size: 12px;
+              }
+              .Reviews .btn:hover{
+                background-color: var(--color-text-hover-css);
+              }
+            `}</style>
+      </Helmet>
+    <div className=" Reviews flex flex-col gap-5">
       <div className="flex justify-between flex-col md:flex-row gap-4 ">
         <div className="show-command w-full md:w-[45%]">
           <div className="head-show-command flex  flex-col gap-5">
@@ -76,19 +92,11 @@ const Reviews = () => {
             </div>
           </div>
         </div>
-        <div className="flex gap-2  justify-center items-center w-full md:w-[45%]">
-          <button className="bg-red-500 p-2">Write A Review</button>
-          <button className="bg-red-500 p-2">Ask A Question</button>
-        </div>
       </div>
       <div>
         <div className="head flex justify-between text-sm">
-          <div className="font-semibold">The Questions and Ratings (0)</div>
-          <div className="flex items-center gap-3 text-colorText2">
-            <span className="cursor-pointer">Questions (0)</span>
-            <span>|</span>
-            <span className="cursor-pointer">Ratings (0)</span>
-          </div>
+          <div className="font-semibold text-colorText2">Ratings (0)</div>
+          <Button variant="contained" className="btn">Write A Review</Button>
         </div>
 
         {mobileSize ? (
@@ -101,7 +109,7 @@ const Reviews = () => {
                   alt=""
                 />
               </div>
-              <div className="info w-full bg-emerald-500 px-3 py-2 rounded-lg">
+              <div className="info w-full bg-mainColorBackground px-3 py-2 rounded-lg">
                 <div className="info-head flex justify-between items-center ">
                   <p className="font-semibold">Kamal</p>
                   <p>3 days ago</p>
@@ -139,7 +147,7 @@ const Reviews = () => {
               autoplay={{ delay: 2500, disableOnInteraction: false }}
             >
               <SwiperSlide className=" pt-8">
-                <div className=" relative box  bg-red-400 rounded-md  flex flex-col justify-center items-center ">
+                <div className=" relative box  bg-mainColorBackground rounded-md  flex flex-col justify-center items-center ">
                     <div className="icon self-start opacity-50">
                     <FormatQuoteIcon fontSize="large" />
                     </div>
@@ -164,6 +172,7 @@ const Reviews = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 

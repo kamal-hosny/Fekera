@@ -18,6 +18,7 @@ import Wishlist from '../pages/wishlist/Wishlist';
 import Cart from '../pages/cart/Cart';
 
 
+
 function App() {
   const Routing = createBrowserRouter([
     {
@@ -40,7 +41,7 @@ function App() {
   ])
   return (
     <>
-      <RouterProvider router={Routing} />
+      <RouterProvider router={Routing} /> 
     </>
   );
 }

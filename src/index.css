@@ -50,3 +50,13 @@ body{
     overflow-x: hidden;
 }
 
+/* .Reviews .btn{
+    padding: 8px 16px ;
+    border-radius: 2px;
+    background-color: var(--main-color-css);
+    box-shadow: none;
+}
+.Reviews .btn:hover{
+    background-color: var(--color-text-hover-css);
+} */
+

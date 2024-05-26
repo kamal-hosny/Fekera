@@ -12,9 +12,6 @@ const Menu = () => {
     const toggleMenu = () => {
         dispatch(setMenu())
     }
-
-    console.log(menuValue);
-
     return (
         <>
       <Helmet>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Description = () => {
   return (
-    <div className="flex justify-between lg:gap-4 gap-8 text-[14px] flex-col lg:flex-row">
+    <div className="flex justify-between lg:gap-4 gap-8 text-[14px] flex-col">
     <div className="flex-1 flex flex-col gap-4">
       <h4 className="text-colorText1 text-[20px] leading-7">
         With the new fashion trends and all the available shopping
@@ -22,7 +22,6 @@ const Description = () => {
         <div className="flex justify-between items-center">
           <h4 className="text-colorText2">Material:</h4>
           <p className="text-colorText1">
-            {" "}
             80% polyamide, 20% elastane
           </p>
         </div>
@@ -49,7 +48,6 @@ const Description = () => {
         <div className="flex justify-between items-center ">
           <h4 className="text-colorText2">Modek height:</h4>
           <p className="text-colorText1">
-            {" "}
             Our model is 186 cm tall and is wearing size
           </p>
         </div>

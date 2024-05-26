@@ -17,6 +17,7 @@ const MegaMenu = ({ myLinks }) => {
   const lng = Cookies.get("i18next") || "en"
 
   const mobileSize = useSelector(state => state.mobileSize.result);
+  const language = useSelector(state => state.languageSlice.result);
 
   const toggleMenu = () => {
     dispatch(setMenu())
@@ -58,7 +59,7 @@ const megaClick = ()=> {
                   const result = text.toLowerCase().replace(/[%&]/g, '-').replace(/[%20 ]/g, "");
                   return (
                     <NavLink to={`${result}`} key={index} className='flex items-center justify-end gap-3 pe-2 py-1  hover:text-hoverColorText' onClick={mobileSize && toggleMenu}>
-                      <li className={'hover:-translate-x-3 p-2 transition'}>
+                      <li className={`${language ? "hover:-translate-x-3" : "hover:translate-x-3"}  p-2 transition`}>
                         {t(x)}
                       </li>
                     </NavLink>

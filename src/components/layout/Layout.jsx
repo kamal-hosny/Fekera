@@ -5,6 +5,7 @@ import MainHeader from "../../pages/header/MainHeader";
 import { Outlet } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setMenu } from "../../reduxToolkit/menuSlice";
+import ScrollToTop from "../../util/ScrollToTop";
 
 const Layout = () => {
     const dispatch = useDispatch();
@@ -28,6 +29,7 @@ const Layout = () => {
             <MainHeader />
             <Outlet />
             <Footer />
+            <ScrollToTop />
         </>
     );
 };
