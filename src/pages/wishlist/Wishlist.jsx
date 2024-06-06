@@ -43,9 +43,9 @@ const Wishlist = () => {
                                         <h3 className="card-title">
                                             ssssssssssssssssssssss
                                         </h3>
-                                        <div className="price text-xs font-semibold flex gap-2 border-b-2 border-borderColor pb-2">
+                                        <div className="price text-xs font-semibold flex  border-b-2 border-borderColor flex-col pb-2">
                                             <del className="price-old text-colorText2">{FormatCurrency(100)}</del>
-                                            <span className="price-new text-[#c2185b]">{FormatCurrency(50)}</span>
+                                            <span className="price-new text-[#18c226]">{FormatCurrency(50)}</span>
                                         </div>
                                     </div>
                                     <div className="card-footer flex flex-col gap-2">
@@ -58,11 +58,13 @@ const Wishlist = () => {
                                 </div>
                             </div>
                         </div>
-                    ) : (<div>
-                        <div className="grid grid-cols-7 gap-4 border-b-2 border-borderColor py-4">
+                    ) : (
+                    <div className="mb-8 ">
+                        <div className="grid grid-cols-7 gap-4 border-b-2 border-borderColor py-4 ">
                             <div className="col-span-4 ">Product name</div>
                             <div>Unit price</div>
-                            <div className="col-span-2">Stock status</div>
+                            <div>Stock status</div>
+                            <div></div>
                         </div>
 
                         <div className="Product-wishlist grid grid-cols-7  border-b-2 border-borderColor items-center pt-2 pb-4">
@@ -74,9 +76,9 @@ const Wishlist = () => {
                                 />
                                 <p className="text-sm font-medium">Denim shorts with rips</p>
                             </div>
-                            <div className="text-xs font-semibold flex gap-1">
-                                <span className="price-new text-[#c2185b]">{FormatCurrency(50)}</span>
-                                <del className="price-old text-colorText2">{FormatCurrency(100)}</del>
+                            <div className="text-xs font-semibold flex gap-1 flex-col">
+                            <del className="price-old text-colorText2">{FormatCurrency(100)}</del>
+                                <span className="price-new text-[#18c226]">{FormatCurrency(50)}</span>
                             </div>
                             <div className="flex items-center gap-0.5 text-xs font-semibold"> <span><CheckIcon style={{ fontSize: '13px' }} /></span> <span>In Stock</span></div>
                             <div className="flex justify-between items-center">

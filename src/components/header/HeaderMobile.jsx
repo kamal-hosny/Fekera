@@ -23,7 +23,7 @@ const HeaderMobile = () => {
       </Helmet>
 
       <Headroom style={{ zIndex: "50" }}>
-        <div className='bg-mainColorBackground shadow relative'>
+        <div className='bg-mainColorBackground shadow relative flex flex-col items-center'>
           <div className="container mx-auto px-4 flex items-center justify-between">
             <span className='flex items-center gap-5'>
               <CartButton />

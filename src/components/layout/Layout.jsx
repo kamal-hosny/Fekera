@@ -27,7 +27,9 @@ const Layout = () => {
                 ></div>
             )}
             <MainHeader />
+            <div className="mt-12 md:mt-4 sm:mt-[70px]">
             <Outlet />
+            </div>
             <Footer />
             <ScrollToTop />
         </>

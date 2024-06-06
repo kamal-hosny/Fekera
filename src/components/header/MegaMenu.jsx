@@ -46,7 +46,7 @@ const megaClick = ()=> {
       )}
 
       {myLinks.links === null ? (
-        <NavLink to={myLinks.name.toLowerCase()} className={arrow ? "text-hoverColorText " : ""} onClick={mobileSize && (()=>{toggleMenu()})}>
+        <NavLink to={ myLinks.name.toLowerCase() === "sale" ? `${myLinks.name.toLowerCase()}` : `shop/${myLinks.name.toLowerCase()}` } className={arrow ? "text-hoverColorText " : ""} onClick={mobileSize && (()=>{toggleMenu()})}>
           {t(myLinks.name)}
         </NavLink>
       ) : (
@@ -55,7 +55,7 @@ const megaClick = ()=> {
           {arrow && (
             <ul className={mobileSize === true ? (`relative ${lng === "en" ? " mobileSizeRtl " : "mobileSizeLtr"}`) : ('absolute z-[5] top-12 right-1 bg-mainColorBackground ps-10 rounded-md w-max py-2 shadow')}>
               {myLinks.links.map((x, index) => {
-                  const text = `${myLinks.name}/${x}`;
+                  const text = `shop/${x}`;
                   const result = text.toLowerCase().replace(/[%&]/g, '-').replace(/[%20 ]/g, "");
                   return (
                     <NavLink to={`${result}`} key={index} className='flex items-center justify-end gap-3 pe-2 py-1  hover:text-hoverColorText' onClick={mobileSize && toggleMenu}>

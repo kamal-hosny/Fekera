@@ -67,7 +67,7 @@ const ProductsSection = ({ name, data }) => {
       </Helmet>
       <div className="ProductsSection my-4 p-4 rounded-md">
 
-          <MainTitle title={name} />
+          <MainTitle title={`${name}`} />
 
           {data && data.length > 0 ? (
           <Swiper

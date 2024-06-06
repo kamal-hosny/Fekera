@@ -13,6 +13,20 @@ const MainTitle = ({ title }) => {
   const language = useSelector(state => state.languageSlice.result);
   const { t } = useTranslation();
 
+  // دالة لإرجاع النص المناسب بناءً على القيمة
+  const filterParam = (value) => {
+    switch (value) {
+      case "specialoffers":
+        return "special+offers";
+      case "topsellers":
+        return "top+sellers";
+      case "latestproducts":
+        return "latest";
+      default:
+        return value;
+    }
+  };
+
   return (
     <>
       <Helmet>
@@ -36,22 +50,22 @@ const MainTitle = ({ title }) => {
             background-color: var(--color-text-hover-css);
           }
 
-          .main-title .main-title-icon{
+          .main-title .main-title-icon {
             font-size: 30px;
             border-radius: 50%;
-            border:1px solid var(--color-text-2-css) ;
+            border: 1px solid var(--color-text-2-css);
             color: var(--color-text-2-css);
             transition: 0.3s;
-        }
-        .main-title .main-title-icon:hover{
-            border:1px solid var(--color-text-1-css) ;
+          }
+          .main-title .main-title-icon:hover {
+            border: 1px solid var(--color-text-1-css);
             color: var(--color-text-1-css);
-        }
+          }
         `}</style>
       </Helmet>
       <div className='main-title text-center py-4 flex justify-between'>
-        <Link to={`/shop/${result}`}>
-          <p className='font-medium text-colorText2 hover:text-colorText1 transition-all leading-10'>{t(title)}</p>
+        <Link to={highlight.includes(result) &&( filterParam(result) && `/shop/products?Sort+by=${filterParam(result)}` )}>
+          <p className={`font-medium text-colorText2 transition-all leading-10 ${highlight.includes(result) ? ("hover:text-colorText1 cursor-pointer"): ("cursor-default")}`}>{t(title)}</p>
         </Link>
         {highlight.includes(result) && (
           <div className='flex items-center gap-4'>
@@ -60,11 +74,9 @@ const MainTitle = ({ title }) => {
             </Link>
             <div className='flex items-center gap-2' style={{direction: "ltr"}}>
               <KeyboardArrowLeftIcon 
-
                 className={`cursor-pointer right-arrow-${result} main-title-icon`} 
               />
               <KeyboardArrowRightIcon 
-  
                 className={`cursor-pointer left-arrow-${result} main-title-icon`} 
               />
             </div>

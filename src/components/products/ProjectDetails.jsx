@@ -14,6 +14,8 @@ import RedeemIcon from "@mui/icons-material/Redeem";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
 import DoneIcon from "@mui/icons-material/Done";
+import { setShowForm } from "../../reduxToolkit/showFormSlice";
+import { useDispatch } from "react-redux";
 
 const availableSizes = [ "M", "XL", "XXL"]
 const allSizes = ["S", "M", "L", "XL", "XXL", "XXXL"]
@@ -21,9 +23,12 @@ const ProjectDetails = () => {
   const [counter, setCounter] = useState(0);
   const [statusLove, setStatusLove] = useState(false);
   const [statusCompare, setStatusCompare] = useState(false);
-
   const [sizeSelected, setSizeSelected] = useState(null)
 
+  const dispatch = useDispatch()
+  const toggleShow = () => {
+    dispatch(setShowForm())
+}
 
   const handleCounterChange = (event) => {
     setCounter(event.target.value);
@@ -113,7 +118,7 @@ const ProjectDetails = () => {
           <h3 className="text-lg text-colorText1">Topshop training t-shart</h3>
           <div className="flex gap-2 text-colorText2">
             <span className="text-sm">0 Reviews</span>
-            <span className="text-[13px] underline cursor-pointer transition-all hover:text-hoverColorText">
+            <span className="text-[13px] underline cursor-pointer transition-all hover:text-hoverColorText" onClick={toggleShow}>
               Write a review
             </span>
           </div>

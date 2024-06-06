@@ -4,19 +4,19 @@ import 'swiper/css';
 
 const smallImages = [
     {
-        img: "https://i.pinimg.com/564x/69/53/f1/6953f1d3fc7970509fd376d656c945cf.jpg"
+        img: "https://sigmafiteg.com/cdn/shop/files/magenta-reg-fit-t-574622_460x.jpg?v=1711323261"
     },
     {
-        img: "https://i.pinimg.com/736x/7b/84/85/7b8485033fa5e070934a18ac11fe15c8.jpg"
+        img: "https://sigmafiteg.com/cdn/shop/files/magenta-reg-fit-t-904258_460x.jpg?v=1711323261"
     },
     {
-        img: "https://i.pinimg.com/564x/ac/0e/e2/ac0ee2fc81fc358edcfa337d3e9ae250.jpg"
+        img: "https://sigmafiteg.com/cdn/shop/files/magenta-reg-fit-t-588172_460x.jpg?v=1711323262"
     },
     {
-        img: "https://i.pinimg.com/736x/41/e2/5d/41e25d840a911c6c25070ffc5da5cb04.jpg"
+        img: "https://sigmafiteg.com/cdn/shop/files/magenta-reg-fit-t-597305_460x.jpg?v=1711323262"
     },
     {
-        img: "https://i.pinimg.com/564x/34/bc/10/34bc108854eae0caaae8e831a40dc931.jpg"
+        img: "https://sigmafiteg.com/cdn/shop/files/magenta-reg-fit-t-796605_460x.jpg?v=1711323262"
     },
 ];
 

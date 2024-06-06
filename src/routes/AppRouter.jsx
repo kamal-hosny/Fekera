@@ -16,6 +16,7 @@ import Login from '../pages/sign/Login';
 import ForgotPassword from '../pages/sign/ForgotPassword';
 import Wishlist from '../pages/wishlist/Wishlist';
 import Cart from '../pages/cart/Cart';
+import Shop from '../pages/shop/Shop';
 
 
 
@@ -35,7 +36,8 @@ function App() {
         {path: "/register", element: <Register />},
         {path: "/forgot-password", element: <ForgotPassword />},
         {path: "/wishlist", element: <Wishlist />},
-        {path: "/cart", element: <Cart />}
+        {path: "/cart", element: <Cart />},
+        {path: "/shop/:slug", element: <Shop />}
       ]
     }
   ])

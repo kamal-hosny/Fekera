@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"; // React library
+import React from "react"; // React library
 
 import { Link } from "react-router-dom";
 
@@ -7,11 +7,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ClearIcon from "@mui/icons-material/Clear";
 import { Button } from "@mui/material";
 import { Helmet } from "react-helmet-async";
-import Cookies from "js-cookie";
-import { loadNamespaces } from "i18next";
-import { useDispatch, useSelector } from "react-redux";
-import { checkScreenSize } from '../../reduxToolkit/mobileSizeSlices';
-
+import {  useSelector } from "react-redux";
 
 const CartButton = () => {
   const languageCurrent = useSelector((state) => {
@@ -26,17 +22,27 @@ const mobileSize = useSelector(state => state.mobileSize.result);
           {`
         .cartButton:hover .cart{
           opacity: 1;
-          transition: 0.3s;
+          transition: opacity 0.3s;
           visibility: visible;
-          
-      
       }
       .cartButton .cart{
           opacity: 0;
+          transition: opacity 0.3s;
           visibility: hidden;
-          transition: 0.3s
-      }
+      }          
 
+      .cartButton .check-cart-button{
+        color: #fff;
+        background: #1d2731;
+        box-shadow: none;
+        margin-top: 10px;
+        width: 100%;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .cartButton .check-cart-button:hover{
+        background-color: var(--color-text-hover-css);
+      }
         `}
         </style>
       </Helmet>
@@ -70,7 +76,7 @@ const mobileSize = useSelector(state => state.mobileSize.result);
               </div>
               <div className="text-sm price"> 35$</div>
             </div>
-            <div className="icon hover:text-red-600 transition-all">
+            <div className="icon-cart-button hover:text-red-600 transition-all">
               <ClearIcon style={{ fontSize: "1.5rem" }} />
             </div>
           </div>
@@ -81,13 +87,8 @@ const mobileSize = useSelector(state => state.mobileSize.result);
             </div>
             <Button
               variant="contained"
-              style={{
-                color: "#fff",
-                background: "#1d2731",
-                boxShadow: "none",
-                marginTop: "10px",
-              }}
-              className=" relative w-11/12 cursor-pointer"
+
+              className=" check-cart-button"
             >
               Check Out
             </Button>

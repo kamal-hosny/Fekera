@@ -11,7 +11,7 @@ import Headroom from "react-headroom";
 const Header = () => {
   return (
     <Headroom style={{zIndex: "50"}}>
-      <div className="  bg-mainColorBackground shadow">
+      <div className="  bg-mainColorBackground shadow h-[90] flex flex-col items-center">
     <div className='container size-full mx-auto flex justify-between md:justify-evenly items-center px-1  '>
       <Logo />
       <Nav />

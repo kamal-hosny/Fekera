@@ -5,6 +5,7 @@ import menuSlice from "../reduxToolkit/menuSlice";
 import mobileSize from "../reduxToolkit/mobileSizeSlices";
 import  setLanguage  from "../reduxToolkit/languageNowSlice";
 import { getAllSalesSliceReducer } from "../reduxToolkit/sale/saleSlice";
+import showFormSlice from "../reduxToolkit/showFormSlice";
 
 
 export const store = configureStore({
@@ -14,6 +15,7 @@ export const store = configureStore({
         menuSlice: menuSlice,
         languageSlice: setLanguage,
         sales: getAllSalesSliceReducer,
+        showFormSlice: showFormSlice,
     }
 })
 

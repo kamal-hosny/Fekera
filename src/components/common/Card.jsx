@@ -95,7 +95,7 @@ const Card = ({ item }) => {
               
             `}</style>
             </Helmet>
-            <div className="card">
+            <div className="card ">
                 <div className="image relative bg-mainColorBackground">
                     <div className="p-1 absolute bg-red w-full z-[2] flex justify-between items-center ">
                         <div className="icon bg-sectionColor  flex items-center justify-center rounded-full border-[1px] border-borderColor" style={{ width: "1.75rem", height: "1.75rem", padding: "1rem", margin: "0.25rem" }} onClick={() => { setStatusLove(!statusLove) }}>
@@ -125,7 +125,7 @@ const Card = ({ item }) => {
                         </div>
                     </Link>
                 </div>
-                <div className="info p-2 flex flex-col gap-2">
+                <div className="info p-2 flex flex-col gap-2 min-h-[160px]">
                     <div className="name-info">
                         <Link to={`/products/${item.id}`}>
                             <h2 className="text-colorText1 hover:text-hoverColorText text-lg">
