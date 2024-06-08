@@ -6,6 +6,7 @@ import mobileSize from "../reduxToolkit/mobileSizeSlices";
 import  setLanguage  from "../reduxToolkit/languageNowSlice";
 import { getAllSalesSliceReducer } from "../reduxToolkit/sale/saleSlice";
 import showFormSlice from "../reduxToolkit/showFormSlice";
+import showSearchSlice from "../reduxToolkit/showSearchSlice";
 
 
 export const store = configureStore({
@@ -13,6 +14,7 @@ export const store = configureStore({
         darkMode: darkMode,
         mobileSize: mobileSize,
         menuSlice: menuSlice,
+        showSearchSlice: showSearchSlice,
         languageSlice: setLanguage,
         sales: getAllSalesSliceReducer,
         showFormSlice: showFormSlice,

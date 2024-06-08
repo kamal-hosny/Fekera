@@ -2,14 +2,24 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { Button } from "@mui/material";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import FormatCurrency from "../../util/FormatCurrency";
 import { Helmet } from "react-helmet-async";
 
 const Card = ({ item }) => {
     const [buttonText, setButtonText] = useState(false);
     const [statusLove, setStatusLove] = useState(false);
+    const [showFilter, setShowFilter] = useState(false);
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.pathname.startsWith("/shop")) {
+          setShowFilter(true);
+        }else{
+            setShowFilter(false);
+        }
+      }, [location.pathname])
 
     // Original price before discount
     const originalPrice = item.price;
@@ -51,7 +61,7 @@ const Card = ({ item }) => {
             justify-content: center;
           }
           
-          .card .button-add-cart .button-wrapper,.text,.icon {
+          .card .button-add-cart .button-wrapper,.text,.icon-card {
             overflow: hidden;
             position: absolute;
             width: 100%;
@@ -64,11 +74,11 @@ const Card = ({ item }) => {
             top: 0
           }
           
-          .card .button-add-cart .text,.icon {
+          .card .button-add-cart .text,.icon-card {
             transition: top 0.5s;
           }
           
-          .card .button-add-cart .icon {
+          .card .button-add-cart .icon-card {
             color: #fff;
             top: 100%;
             display: flex;
@@ -76,7 +86,7 @@ const Card = ({ item }) => {
             justify-content: center;
           }
           
-          .card .button-add-cart .icon svg {
+          .card .button-add-cart .icon-card svg {
             width: 24px;
             height: 24px;
           }
@@ -89,16 +99,19 @@ const Card = ({ item }) => {
             top: -100%;
           }
           
-          .card .button-add-cart:hover .icon {
+          .card .button-add-cart:hover .icon-card {
             top: 0;
           }
               
             `}</style>
             </Helmet>
-            <div className="card ">
+            <div className="card block">
                 <div className="image relative bg-mainColorBackground">
+                    
+                    
                     <div className="p-1 absolute bg-red w-full z-[2] flex justify-between items-center ">
-                        <div className="icon bg-sectionColor  flex items-center justify-center rounded-full border-[1px] border-borderColor" style={{ width: "1.75rem", height: "1.75rem", padding: "1rem", margin: "0.25rem" }} onClick={() => { setStatusLove(!statusLove) }}>
+                        
+                        <div className="icon-card bg-sectionColor flex items-center justify-center rounded-full border-[1px] border-borderColor" style={{ width: "1.75rem", height: "1.75rem", padding: "1rem", margin: "0.25rem" }} onClick={() => { setStatusLove(!statusLove) }}>
                             {statusLove === false ? (<FavoriteBorderIcon
                                 className="text-colorText2 cursor-pointer"
                                 style={{ fontSize: "18px" }}
@@ -110,15 +123,22 @@ const Card = ({ item }) => {
                             )}
 
                         </div>
-                        <div className="status">
-                            <p
+
+                        {showFilter && (
+                            <div></div>
+                        )}
+                     
+                        <div className="status"><p
                                 className="p-1 rounded-sm text-sm text-white"
                                 style={{ background: item.status.color }}
                             >
                                 {item.status.name}
                             </p>
-                        </div>
+                            </div>
+
                     </div>
+
+
                     <Link to={`/products/${item.id}`}>
                         <div className="overflow-hidden w-full h-[300px] xl:h-[350px]">
                             <img className=" w-full h-full object-cover hover:scale-105 transition-all" src={item.image} alt="" />
@@ -161,7 +181,7 @@ const Card = ({ item }) => {
                 <div className="button-add-cart cursor-pointer">
                     <div className="button-wrapper">
                         <div className="text">Add to cart</div>
-                        <span className="icon">
+                        <span className="icon-card">
                             <svg viewBox="0 0 16 16" className="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
                             </svg>

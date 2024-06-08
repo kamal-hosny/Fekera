@@ -6,6 +6,7 @@ import { Outlet } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setMenu } from "../../reduxToolkit/menuSlice";
 import ScrollToTop from "../../util/ScrollToTop";
+import Search from "../../components/header/Search";
 
 const Layout = () => {
     const dispatch = useDispatch();
@@ -32,6 +33,7 @@ const Layout = () => {
             </div>
             <Footer />
             <ScrollToTop />
+            <Search />
         </>
     );
 };

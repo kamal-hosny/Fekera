@@ -5,11 +5,22 @@ import PersonIcon from "@mui/icons-material/Person"; // MUI Icon
 import DarkMode from "./DarkMode";
 import CartButton from "./CartButton";
 import Search from "./Search";
+import { useDispatch, useSelector } from "react-redux";
+import SearchIcon from '@mui/icons-material/Search';
+import { setOpenSearch } from "../../reduxToolkit/showSearchSlice";
 
 const HeaderIcons = () => {
+  const dispatch = useDispatch()
+  
+  const toggleSearch = () => {
+    dispatch(setOpenSearch())
+  }
+
   return (
     <div className="flex gap-4">
-      <Search />
+        <div className='cursor-pointer' onClick={toggleSearch}>
+        <SearchIcon />
+        </div>
       <Link to="/login" className="flex cursor-pointer">
         <PersonIcon />
       </Link>
