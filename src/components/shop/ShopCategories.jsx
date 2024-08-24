@@ -18,7 +18,7 @@ const ShopCategories = () => {
   },[dispatch])
 
   const [showFilter, setShowFilter] = useState(false);
-  const [gridRow, setGridRow] = useState(false);
+
   const [valueSlider, setValueSlider] = useState([0, 100]);
 
   const handleChange = (event, newValue) => {
@@ -63,28 +63,8 @@ const ShopCategories = () => {
             />
             <SelectType name="Show" Types={["20", "40", "60", "80"]} />
           </div>
-          <div className="flex items-center gap-2 text-colorText2">
-            <div
-              className={`icon cursor-pointer hover:text-colorText1 ${gridRow ? "text-colorText1" : ""
-                } transition-all`}
-              onClick={() => {
-                setGridRow(true);
-              }}
-            >
-              <ViewModuleIcon />
-            </div>
-            <div
-              className={`icon cursor-pointer hover:text-colorText1 ${!gridRow ? "text-colorText1" : ""
-                } transition-all`}
-              onClick={() => {
-                setGridRow(false);
-              }}
-            >
-              <TableRowsIcon />
-            </div>
-          </div>
         </div>
-        {gridRow ? (
+        
           <div className="grid-row grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-4">
           {topSellersData.map((x) => (
             <>
@@ -93,11 +73,6 @@ const ShopCategories = () => {
           ))}
           </div>
       
-        ) : (
-          <div className="grid-column">
-            GridColumn
-          </div>
-        )}
       </div>
 
       <div

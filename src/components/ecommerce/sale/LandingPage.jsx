@@ -27,13 +27,13 @@ const LandingPage = () => {
                     style={{direction: "rtl"}}
                 >
                     <SwiperSlide>
-                        <img src="https://btech.com/media/homecontent/banner/2/3/2368x800_web_banners_en.jpg" className='w-full h-full object-cover' alt="aa" />
+                        <img src="/images/loadingPage/1.png" className='w-full h-full object-cover' alt="aa" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="https://btech.com/media/homecontent/banner/2/3/2368x800_en.jpg" className='w-full h-full object-cover' alt="as" />
+                        <img src="/images/loadingPage/2.png" className='w-full h-full object-cover' alt="as" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src="https://btech.com/media/homecontent/banner/b/a/babyliss_eid_en_166.png" className='w-full h-full object-cover' alt="ad" />
+                        <img src="/images/loadingPage/3.png" className='w-full h-full object-cover' alt="ad" />
                     </SwiperSlide>
                 </Swiper>
             </div>

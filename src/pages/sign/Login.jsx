@@ -83,6 +83,9 @@ const Login = () => {
                       >
                         {t("EMAIL ADDRESS")}:
                       </label>
+
+
+
                       <div className="mt-2">
                         <input
                           {...register("email", {
@@ -99,6 +102,12 @@ const Login = () => {
                             }`}
                         />
                       </div>
+
+
+
+
+
+                      
                       {errors.email && (
                         <span className="text-red-500">
                           {errors.email.message}

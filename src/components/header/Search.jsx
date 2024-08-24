@@ -12,10 +12,13 @@ const Search = () => {
   const toggleSearch = () => {
     dispatch(setOpenSearch());
   };
+  const LanguageDirection = useSelector((state) => {
+    return state.languageSlice.result
+  })
+  console.log(LanguageDirection)
   const searchValue = useSelector((state) => {
     return state.showSearchSlice.result;
   });
-  console.log(searchValue);
 
   return (
     <>
@@ -28,7 +31,7 @@ const Search = () => {
             <input
               type="text"
               value={searchInputValue}
-              placeholder="Enter the search word"
+              placeholder={`${LanguageDirection ? "Enter the search word" : "أدخل كلمة البحث"}`}
               onChange={(e) => setSearchInputValue(e.target.value)}
               className="w-full h-[50px] p-1 px-2 text-colorText1 bg-sectionColor focus:outline-none"
             />
@@ -77,8 +80,8 @@ const Search = () => {
       )}
       {searchValue && (
         <div
-          style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
-          className="fixed left-0 top-0 h-full w-full z-[50] flex"
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}
+          className="fixed left-0 top-0 h-full w-full z-[50] flex backdrop-blur-xl"
           onClick={toggleSearch}
         ></div>
       )}

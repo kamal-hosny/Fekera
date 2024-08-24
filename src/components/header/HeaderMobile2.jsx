@@ -8,7 +8,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ManageSearchIcon from "@mui/icons-material/ManageSearch";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import { useTranslation } from "react-i18next";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setOpenSearch } from "../../reduxToolkit/showSearchSlice";
 
 const navheader = [
@@ -48,6 +48,11 @@ const navheader = [
 
 const HeaderMobile2 = () => {
   const dispatch = useDispatch();
+
+  const LanguageDirection = useSelector((state) => {
+    return state.languageSlice.result
+  })
+
   const toggleSearch = () => {
     dispatch(setOpenSearch());
   };
@@ -95,7 +100,7 @@ const HeaderMobile2 = () => {
                     )}
                     {item.icon}
                   </button>
-                  <p>{t(item.name)}</p>
+                  <p className={`${!LanguageDirection && ("text-xs")}`}>{t(item.name)}</p>
                 </Link>
               )}
             </>

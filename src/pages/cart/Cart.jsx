@@ -1,14 +1,20 @@
 import React, { useState } from "react";
-import { Button } from "@mui/material";
+import { Button, InputLabel, MenuItem, Select, FormControl } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import CheckIcon from "@mui/icons-material/Check";
 import { Helmet } from "react-helmet-async";
 import BreadCrumbs from "../../components/common/BreadCrumbs";
 import FormatCurrency from "../../util/FormatCurrency";
 import { useSelector } from "react-redux";
 
+const availableSizes = ["M", "XL", "XXL"];
+
 const Cart = () => {
   const [counter, setCounter] = useState(0);
+  const [sizeSelected, setSizeSelected] = useState("");
+
+  const handleChange = (event) => {
+    setSizeSelected(event.target.value);
+  };
 
   const mobileSize = useSelector((state) => state.mobileSize.result);
 
@@ -29,7 +35,7 @@ const Cart = () => {
     }
   };
 
-  let totalProduct = (price) => {
+  const totalProduct = (price) => {
     return FormatCurrency(price * counter);
   };
 
@@ -63,86 +69,110 @@ const Cart = () => {
         <BreadCrumbs />
         <div className="cart flex flex-col gap-6 md:gap-2">
           {mobileSize ? (
-            <div className=" flex flex-col gap-2 w-[95%]  self-center">
-              <div className="relative cart-card flex gap-2 border-[1px] border-borderColor p-1">
+            <div className=" flex flex-col gap-2 w-[95%] self-center">
+              <div className="relative flex-col cart-card flex gap-2 border-[1px] border-borderColor p-1">
+                <div className="delete flex justify-center items-center w-6 h-6 absolute -top-3 -right-3 bg-red-600 rounded-full hover:bg-colorText1 transition-all">
+                  <CloseIcon className="closeIcon" style={{ fontSize: "18px" }} />
+                </div>
 
-
-              <div className="delete flex justify-center items-center w-6 h-6 absolute -top-3 -right-3 bg-red-600 rounded-full hover:bg-colorText1 transition-all">
-                    <CloseIcon className="closeIcon" style={{fontSize: "18px"}} />
-                  </div>
-
-
-                <div className="image">
-                <img
+                <div className="flex gap-4">
+                  <div className="image">
+                    <img
                       className="w-[80px] h-[110px] object-cover"
                       src="https://i.pinimg.com/236x/e1/ea/0f/e1ea0f41f40c365c769564be9e2c4292.jpg"
                       alt="Denim shorts with rips"
                     />
+                  </div>
+                  <div className="info">
+                    <p className="text-sm font-medium">Denim shorts with rips</p>
+                    <div className="text-xs font-semibold flex flex-row gap-1">
+                      <del className="price-old text-colorText2">{FormatCurrency(100)}</del>
+                      <span className="price-new text-[#18c226]">{FormatCurrency(50)}</span>
+                    </div>
+                    <div className="counter text-black flex gap-1 justify-start items-center">
+                      <span
+                        onClick={handleDecrement}
+                        className="text-xl p-1 cursor-pointer text-colorText2 hover:text-colorText1 transition-all"
+                      >
+                        -
+                      </span>
+                      <input
+                        className="input-counter text-center w-7 h-7 bg-colorText2 text-white rounded-sm"
+                        type="text"
+                        value={counter}
+                        onChange={handleCounterChange}
+                      />
+                      <span
+                        onClick={handleIncrement}
+                        className="text-xl p-1 cursor-pointer text-colorText2 hover:text-colorText1 transition-all"
+                      >
+                        +
+                      </span>
+                    </div>
+                    <div className="total text-xs font-semibold">
+                      <span>TotalPrice :</span>
+                      <span>{totalProduct(200)}</span>
+                    </div>
+
+
+                  </div>
                 </div>
-                <div className="info">
-                  <p className="text-sm font-medium">
-                      Denim shorts with rips
-                  </p>
-                  
+                <div className="">
+                  <FormControl fullWidth>
 
-                  <div className="text-xs font-semibold flex flex-row gap-1 text ">
-                    <del className="price-old text-colorText2">
-                      {FormatCurrency(100)}
-                    </del>
-                    <span className="price-new text-[#18c226]">
-                      {FormatCurrency(50)}
-                    </span>
-                  </div>
-
-                  <div className="counter text-black flex gap-1 justify-start items-center">
-                    <span
-                      onClick={handleDecrement}
-                      className="text-xl p-1 cursor-pointer text-colorText2 hover:text-colorText1 transition-all"
+                    <Select
+                      sx={{
+                        '& .MuiOutlinedInput-notchedOutline': {
+                          borderColor: 'var(--color-text-2-css)',
+                        },
+                        '&:hover .MuiOutlinedInput-notchedOutline': {
+                          borderColor: 'var(--color-text-hover-css)',
+                        },
+                        '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                          borderColor: 'var(--color-text-hover-css)',
+                        },
+                        color: "var(--color-text-2-css)",
+                        '& .MuiSelect-icon': {
+                          color: 'var(--color-text-2-css)',
+                        },
+                      }}
+                      id="size-select"
+                      value={sizeSelected}
+                      onChange={handleChange}
+                      displayEmpty
                     >
-                      -
-                    </span>
-                    <input
-                      className="input-counter text-center w-7 h-7 bg-colorText2 text-white rounded-sm"
-                      type="text"
-                      value={counter}
-                      onChange={handleCounterChange}
-                    />
-                    <span
-                      onClick={handleIncrement}
-                      className="text-xl p-1 cursor-pointer text-colorText2 hover:text-colorText1 transition-all"
-                    >
-                      +
-                    </span>
-                  </div>
-                  <div className="total text-xs font-semibold">
-                  <span>TotalPrice :</span>
-                    <span>{totalProduct(200)}</span>
-                  </div>
-
+                      {availableSizes.map((size, index) => (
+                        <MenuItem key={index} value={size}>
+                          {size}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
                 </div>
+
               </div>
+
             </div>
           ) : (
             <div className="cart-products border-y-2 border-borderColor">
               <div>
-                <div className="grid grid-cols-7 gap-4 border-b-2 border-borderColor py-4 text-center">
+                <div className="grid grid-cols-8 gap-4 border-b-2 border-borderColor py-4 text-center">
                   <div className="col-span-3">Product</div>
                   <div>Quantity</div>
+                  <div>Size</div>
                   <div>Price</div>
                   <div>Total</div>
                   <div>Remove</div>
                 </div>
 
-                <div className="Product-products grid grid-cols-7 border-b-2 border-borderColor items-center pt-2 pb-4">
+                <div className="Product-products grid grid-cols-8 border-b-2 border-borderColor items-center pt-2 pb-4">
                   <div className="col-span-3 flex items-center gap-4">
                     <img
                       className="w-[80px] h-[110px] object-cover"
                       src="https://i.pinimg.com/236x/e1/ea/0f/e1ea0f41f40c365c769564be9e2c4292.jpg"
                       alt="Denim shorts with rips"
                     />
-                    <p className="text-sm font-medium">
-                      Denim shorts with rips
-                    </p>
+                    <p className="text-sm font-medium">Denim shorts with rips</p>
                   </div>
 
                   <div className="counter text-black flex gap-1 justify-center">
@@ -165,14 +195,41 @@ const Cart = () => {
                       +
                     </span>
                   </div>
+                  <div>
+                    <FormControl fullWidth>
 
+                      <Select
+                        sx={{
+                          '& .MuiOutlinedInput-notchedOutline': {
+                            borderColor: 'var(--color-text-2-css)',
+                          },
+                          '&:hover .MuiOutlinedInput-notchedOutline': {
+                            borderColor: 'var(--color-text-hover-css)',
+                          },
+                          '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                            borderColor: 'var(--color-text-hover-css)',
+                          },
+                          color: "var(--color-text-2-css)",
+                          '& .MuiSelect-icon': {
+                            color: 'var(--color-text-2-css)',
+                          },
+                        }}
+                        id="size-select"
+                        value={sizeSelected}
+                        onChange={handleChange}
+                        displayEmpty
+                      >
+                        {availableSizes.map((size, index) => (
+                          <MenuItem key={index} value={size}>
+                            {size}
+                          </MenuItem>
+                        ))}
+                      </Select>
+                    </FormControl>
+                  </div>
                   <div className="text-xs font-semibold flex flex-col-reverse gap-1 text-center">
-                    <span className="price-new text-[#18c226]">
-                      {FormatCurrency(50)}
-                    </span>
-                    <del className="price-old text-colorText2">
-                      {FormatCurrency(100)}
-                    </del>
+                    <span className="price-new text-[#18c226]">{FormatCurrency(50)}</span>
+                    <del className="price-old text-colorText2">{FormatCurrency(100)}</del>
                   </div>
                   <div className="flex items-center gap-0.5 text-xs font-semibold justify-center">
                     {totalProduct(200)}
@@ -185,7 +242,7 @@ const Cart = () => {
             </div>
           )}
 
-          <div className="cart-bottom flex md:justify-between justify-center flex-col gap-2 md:flex-row   ">
+          <div className="cart-bottom flex md:justify-between justify-center flex-col gap-2 md:flex-row">
             <div className="coupon bg-mainColorBackground p-4 rounded-sm flex flex-col gap-3 border-[1px] border-borderColor h-fit w-[384px] md:w-fit self-center sm:self-start">
               <p className="text-sm">Apply coupon to get discount!</p>
               <div className="flex items-center">
@@ -200,7 +257,7 @@ const Cart = () => {
               </div>
             </div>
 
-            <div className="pricing bg-mainColorBackground p-4 rounded-sm flex flex-col gap-3  border-[1px] border-borderColor w-[384px] md:w-96 self-center sm:self-start">
+            <div className="pricing bg-mainColorBackground p-4 rounded-sm flex flex-col gap-3 border-[1px] border-borderColor w-[384px] md:w-96 self-center sm:self-start">
               <div className="flex flex-col gap-3">
                 <p className="text-sm">Summary</p>
                 <ul className="price-pricing flex flex-col gap-1 text-xs border-y-[1px] border-borderColor py-3">
